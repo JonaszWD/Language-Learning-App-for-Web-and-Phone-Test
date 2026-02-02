@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import * as SQLite from 'expo-sqlite';
+
 import {
   View,
   Text,
@@ -14,6 +16,8 @@ import { Picker } from "@react-native-picker/picker";
 
 import GeminiButton from "@/components/GeminiButton";
 
+const db = await SQLite.openDatabaseAsync('databaseName');
+
 export default function App() {
   const { width } = useWindowDimensions();
 
@@ -26,6 +30,7 @@ export default function App() {
   const [textInput, setTextInput] = useState("");
   const [selected, setSelected] = useState("");
   const [fieldInput, setFieldInput] = useState("");
+
 
   const results = useMemo(
     () => [
