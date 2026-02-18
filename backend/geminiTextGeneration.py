@@ -2,7 +2,7 @@ from google import genai
 from postgres import Postgres
 from psycopg2 import errors
 db = Postgres()
-#client = genai.Client(api_key="AIzaSyBYP4fS9M_EDSsapHvsIQD0uuJpzRvqAcI")
+#client = genai.Client(api_key="API_KEY")
 
 def create_next():
     response = client.models.generate_content(
